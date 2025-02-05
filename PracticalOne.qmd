@@ -1,0 +1,48 @@
+# Practical One
+
+## Set-up Github
+
+```{r} usethis::use_git()}
+```
+
+```{r} usethis::create_github_token()}
+```
+
+```{r} gitcreds::gitcreds_set()}
+```
+
+```{r} usethis::use_github()}
+```
+
+------------------------------------------------------------------------
+
+## Question 1
+
+```{r} airquality_q1 <- airquality[!complete.cases(airquality),] airquality_q1}
+```
+
+------------------------------------------------------------------------
+
+## Question 2
+
+```{r} airquality_q2 <- airquality airquality_q2 mean_temp <- mean(airquality_q2[[4]], na.rm = TRUE)  sd_temp <- sd(airquality_q2[[4]], na.rm = TRUE) min_temp <- min(airquality_q2[[4]], na.rm = TRUE) max_temp <- max(airquality_q2[[4]], na.rm = TRUE)  mean_ozone <- mean(airquality_q2[[1]], na.rm = TRUE)  sd_ozone <- sd(airquality_q2[[1]],na.rm = TRUE) min_ozone <- min(airquality_q2[[1]], na.rm = TRUE) max_ozone <- max(airquality_q2[[1]], na.rm = TRUE)}
+```
+
+------------------------------------------------------------------------
+
+## Question 3
+
+Setting up data set
+
+```{r} cars <- cars cars[] <- lapply(cars,as.numeric) head(cars)  matrix_x <- cbind(1,matrix(cars$speed)) matrix_y <- matrix(cars$dist)}
+```
+
+Calculate beta estimate
+
+```{r} beta_estimate <- solve(t(matrix_x)%*%(matrix_x))%*%t(matrix_x)%*%(matrix_y) beta_estimate}
+```
+
+Comparison with linear regression model
+
+```{r} car_fit <- lm(cars$distance ~ cars$speed) summary(car_fit)}
+```
