@@ -1,5 +1,7 @@
 # Practical One
 
+------------------------------------------------------------------------
+
 ## Set-up Github
 
 ```{r}
@@ -62,7 +64,7 @@ cars[] <- lapply(cars,as.numeric)
 head(cars)  
 
 matrix_x <- cbind(1,matrix(cars$speed)) 
-matrix_y <- matrix(cars$dist)}
+matrix_y <- matrix(cars$dist)
 ```
 
 Calculate beta estimate
@@ -79,6 +81,6 @@ beta_estimate
 Check that you get the same β estimates as when fitting the linear regression model using lm() in R.
 
 ```{r}
-car_fit <- lm(cars$distance ~ cars$speed) 
+car_fit <- lm(cars$dist~ cars$speed) 
 summary(car_fit)
 ```
