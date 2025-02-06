@@ -1,3 +1,9 @@
+---
+title: Question 1
+author: ESNCHR001
+format: html
+---
+
 ## Question 2
 
 2.  Find mean, sd, min, max for each of temperature and ozone level.

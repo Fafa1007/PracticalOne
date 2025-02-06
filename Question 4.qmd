@@ -1,3 +1,9 @@
+---
+title: Question 1
+author: ESNCHR001
+format: html
+---
+
 ## Question 4
 
 4.  Check that you get the same β estimates as when fitting the linear regression model using lm() in R.

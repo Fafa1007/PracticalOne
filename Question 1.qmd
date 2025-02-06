@@ -1,3 +1,9 @@
+---
+title: Question 1
+author: ESNCHR001
+format: html
+---
+
 ## Question 1
 
 1.  Find all rows in “airquality” that have missing values. Note that the `airquality` dataset in `R` is always available (just type `airquality` in the console to see it).
