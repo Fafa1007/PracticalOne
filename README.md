@@ -7,6 +7,7 @@ The purpose of this project is to `[briefly describe the project's goals and obj
 Run the following code from the project working directory:
 
 ``` r
+{r}
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
