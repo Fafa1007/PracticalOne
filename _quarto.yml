@@ -1,5 +1,28 @@
 project:
-  title: "PracticalOne"
-
-editor: visual
-
+  type: book
+  render:
+  - index.qmd
+  output-dir: docs
+  
+book:
+  title: Statistical Computing
+  sidebar:
+    border: true
+    background: light
+    position: right
+  navbar:
+    search: true
+    background: light
+  chapters:
+  - index.qmd
+  - Question 1.qmd
+  - Question 2.qmd
+  - Question 3.qmd
+  - Question 4.qmd
+  
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-location: left
