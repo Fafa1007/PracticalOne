@@ -1,7 +1,5 @@
 # Practical One
 
-------------------------------------------------------------------------
-
 ## Set-up Github
 
 ```{r}
@@ -25,7 +23,7 @@ usethis::use_github()
 
 ## Question 1
 
-Find all rows in “airquality” that have missing values. Note that the `airquality` dataset in `R` is always available (just type `airquality` in the console to see it).
+1.  Find all rows in “airquality” that have missing values. Note that the `airquality` dataset in `R` is always available (just type `airquality` in the console to see it).
 
 ```{r}
 airquality_q1 <- airquality[!complete.cases(airquality),]
@@ -36,7 +34,7 @@ airquality_q1
 
 ## Question 2
 
-Find mean, sd, min, max for each of temperature and ozone level.
+2.  Find mean, sd, min, max for each of temperature and ozone level.
 
 ```{r}
 airquality_q2 <- airquality 
@@ -56,7 +54,7 @@ max_ozone <- max(as.numeric(airquality_q2[[1]]), na.rm = TRUE)
 
 ## Question 3
 
-For linear regression, parameter estimates can be found as follows $\beta=(X^TX)^{-1}X^TY$. Here, Y is the response variable, and X is the design matrix. The cars data (an R data set, also always available in `R`) contains two variables: speed and distance to stop. Fit a simple linear regression model to these data, i.e. find the β estimates, using the equation above, and matrix calcuations in R.
+3.  For linear regression, parameter estimates can be found as follows $\beta=(X^TX)^{-1}X^TY$. Here, Y is the response variable, and X is the design matrix. The cars data (an R data set, also always available in `R`) contains two variables: speed and distance to stop. Fit a simple linear regression model to these data, i.e. find the β estimates, using the equation above, and matrix calcuations in R.
 
 ```{r}
 cars <- cars 
@@ -78,7 +76,7 @@ beta_estimate
 
 ## Question 4
 
-Check that you get the same β estimates as when fitting the linear regression model using lm() in R.
+4.  Check that you get the same β estimates as when fitting the linear regression model using lm() in R.
 
 ```{r}
 car_fit <- lm(cars$dist~ cars$speed) 
