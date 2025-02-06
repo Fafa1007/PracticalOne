@@ -14,7 +14,7 @@ projrsimple::projr_init()
 ```
 
 ```{r}
-projrsimple::projr_run
+projrsimple::projr_run()
 ```
 
 ## Set-up Github

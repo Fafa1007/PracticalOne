@@ -1,0 +1,20 @@
+## Question 2
+
+2.  Find mean, sd, min, max for each of temperature and ozone level.
+
+```{r}
+airquality_q2 <- airquality  
+airquality_q2 mean_temp <- mean(as.numeric(airquality_q2[[4]]), na.rm = TRUE)
+sd_temp <- sd(as.numeric(airquality_q2[[4]]), na.rm = TRUE)
+min_temp <- min(as.numeric(airquality_q2[[4]]), na.rm = TRUE)
+max_temp <- max(as.numeric(airquality_q2[[4]]), na.rm = TRUE)
+
+mean_ozone <- mean(as.numeric(airquality_q2[[1]]), na.rm = TRUE)
+sd_ozone <- sd(as.numeric(airquality_q2[[1]]),na.rm = TRUE)
+min_ozone <- min(as.numeric(airquality_q2[[1]]), na.rm = TRUE)
+max_ozone <- max(as.numeric(airquality_q2[[1]]), na.rm = TRUE)
+```
+
+------------------------------------------------------------------------
+
+## 

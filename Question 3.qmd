@@ -1,0 +1,19 @@
+## Question 3
+
+3.  For linear regression, parameter estimates can be found as follows $\beta=(X^TX)^{-1}X^TY$. Here, Y is the response variable, and X is the design matrix. The cars data (an R data set, also always available in `R`) contains two variables: speed and distance to stop. Fit a simple linear regression model to these data, i.e. find the β estimates, using the equation above, and matrix calcuations in R.
+
+```{r}
+cars <- cars  cars[] <- lapply(cars,as.numeric) 
+head(cars)    matrix_x <- cbind(1,matrix(cars$speed))
+matrix_y <- matrix(cars$dist)
+```
+
+Calculate beta estimate
+
+```{r}
+beta_estimate <- solve(t(matrix_x)%*%(matrix_x))%*%t(matrix_x)%*%(matrix_y) beta_estimate
+```
+
+------------------------------------------------------------------------
+
+## 
