@@ -7,11 +7,9 @@ format: html
 
 
 
-
 # Practical One
 
 ## Set-up
-
 
 
 
@@ -34,9 +32,7 @@ projrsimple::projr_run()
 
 
 
-
 ## Set-up Github
-
 
 
 
@@ -61,9 +57,7 @@ usethis::use_github()
 
 
 
-
 ## Render
-
 
 
 
@@ -71,7 +65,6 @@ usethis::use_github()
 ```{r}
 quarto::quarto_render()
 ```
-
 
 
 
