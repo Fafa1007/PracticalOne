@@ -43,15 +43,52 @@ For linear regression, parameter estimates can be found as follows $\beta=(X^TX)
 cars <- cars  
 cars[] <- lapply(cars,as.numeric) 
 head(cars)    
-matrix_x <- cbind(1,matrix(cars$speed))
-matrix_y <- matrix(cars$dist)
+X <- cbind(1,matrix(cars$speed))
+Y <- matrix(cars$dist)   #response matrix
+n <- nrow(X)             # Number of observations
+p <- ncol(X)             # Number of parameters (intercept + predictors)
 ```
 
-Calculate beta estimate
+Calculate beta estimate, standard errors, test-statistics and p-values
 
 ```{r}
-beta_estimate <- solve(t(matrix_x)%*%(matrix_x))%*%t(matrix_x)%*%(matrix_y) 
-beta_estimate
+simp_reg <- function(matrix_x, matrix_y){
+    
+    # Compute beta estimates (OLS solution)
+    beta_hat <- solve(t(X) %*% X) %*% (t(X) %*% Y)  # (X'X)^(-1) X'Y
+
+    # Compute residuals
+    y_hat <- X %*% beta_hat  # Predicted values
+    residuals <- Y - y_hat   # Residuals
+    
+    # Compute residual variance (sigma^2)
+    sigma_sq <- sum(residuals^2) / (n - p)
+    
+    # Compute variance-covariance matrix of beta estimates
+    cov_beta <- sigma_sq * solve(t(X) %*% X)
+    
+    # Compute standard errors (SE) of beta coefficients
+    SE_beta <- sqrt(diag(cov_beta))
+    SE_beta
+    
+    # Compute the test-statistics
+    test_stats <- beta_hat / SE_beta
+    test_stats
+    
+    # Calculate p-values
+    p_values <- 2 * pt(-abs(test_stats), df = n - p)
+    
+    return_list <- list(
+      Beta_Coefficients = beta_hat,
+      Standard_Error = SE_beta,
+      Test_Statistics = test_stats,
+      P_Values = p_values
+    )
+    
+    print(return_list)
+}
+
+simp_reg(X, Y)
 ```
 
 ------------------------------------------------------------------------
@@ -64,6 +101,3 @@ Check that you get the same β estimates as when fitting the linear regression m
 car_fit <- lm(cars$dist~ cars$speed)  
 summary(car_fit)
 ```
-
-
-

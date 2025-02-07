@@ -15,10 +15,8 @@ book:
     background: light
   chapters:
   - index.qmd
-  - Question 1.qmd
-  - Question 2.qmd
-  - Question 3.qmd
-  - Question 4.qmd
+  - Practical One.qmd
+  - Practical Two.qmd
   
 format:
   html:
