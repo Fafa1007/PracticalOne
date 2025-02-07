@@ -39,6 +39,12 @@ Push commits to git hub
 system("git push origin master")
 ```
 
+if file e.g. Question1.qmd had conflict, run:
+
+```{r}
+system("git add Question1.qmd")
+```
+
 Render
 
 ```{r}
