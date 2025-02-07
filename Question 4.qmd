@@ -1,8 +1,0 @@
-## Question 4
-
-4.  Check that you get the same β estimates as when fitting the linear regression model using lm() in R.
-
-```{r}
-car_fit <- lm(cars$dist~ cars$speed)  
-summary(car_fit)
-```
