@@ -91,11 +91,18 @@ smoothed_y
 Use the built-in `lowess()` function with the same `f` value. You will also need to set the `iter` argument to 0.
 
 ```{r}
-lowess(x, y, f, iter=0)
+lowess_results <- lowess(x, y, f, iter=0)
 ```
 
 Plot both curves to compare their smoothing values.
 
 ```{r}
-
+library(ggplot2)
+ggplot() +
+  geom_point(aes(x = x, y = y)) +         # First scatter plot
+  geom_line(aes(x = x, y = y), color = "red") +  # Red line for first set of points
+  geom_line(aes(x = as.numeric(unlist(lowess_results[1])), y = as.numeric(unlist(lowess_results[2]))), color = "blue") + # Blue line for second set of points
+  ggtitle("Lowess Smoothing") +
+  xlab("X Values") +
+  ylab("Y Values")
 ```
