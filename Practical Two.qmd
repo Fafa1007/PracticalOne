@@ -35,31 +35,6 @@ f <- as.numeric(readline("Enter a value for f (between 0 and 1): "))
 Define a function `customLowess(x, y, f)` that returns the smoothed values
 
 ```{r}
-customLowess<- function(x,y,f){
-  k = f*length(x) # k is the number of closest neighbours used for point xi
-  
-  # Finding dmax
-  dmax <- 0
-  for (i in 1:k){
-    for (j in 1:k){
-      if (dmax < abs(x[i]-x[j])){
-        #print(paste("x[i]=", x[i], " x[j]=", x[j]))
-        dmax <- x[i] - x[j]
-      }
-    }
-  }
-  
-  # Computing Weights
-  w <- matrix(nrow=k, ncol=k)
-  for(i in 1:k){
-    for(j in 1: k)
-    w[i][j] <- (1-(abs(x[i]-x[j])/dmax)^3)^3
-  }
-  x[1][1] <- 1
-}
-```
-
-```{r}
 # Function to find the weights
 lowess_weights <- function(x_target, x_neighbors, d_max) {
   # Compute the absolute distances between the target and neighbors
@@ -73,7 +48,10 @@ lowess_weights <- function(x_target, x_neighbors, d_max) {
 
 # Function to find the Beta Coefficients to perform the weighted linear regression
 lowess_beta <- function(x, y, w ){
-  
+  x<- cbind(1,x)
+  w <- diag(w)
+  beta<- solve(t(x)%*%w%*%x)%*%t(x)%*%w%*%y
+  return(beta)
 }
 
 # Function to perform LOWESS smoothing
@@ -87,23 +65,23 @@ lowess_smoothing <- function(x, y, f) {
     distances <- abs(x[i] - x)
     neighbor_indices <- order(distances)[1:k] # gets the largest k distances
     x_neighbors <- x[neighbor_indices]
+    y_neighbors <- y[neighbor_indices]
     
     # Compute d_max (max distance between the target and neighbors)
     d_max <- max(distances[neighbor_indices])
     
     # Compute the weights for the neighbors
     weights <- lowess_weights(x[i], x_neighbors, d_max)
+    betas <- lowess_beta(x_neighbors,y_neighbors,weights)
     
+    smoothed_y[i] <- betas[1] + betas[2]*x[i] 
   }
   
   return(smoothed_y)
 }
 
-# User input for the span f (between 0 and 1)
-f <- as.numeric(readline("Enter a value for f (between 0 and 1): "))
-
-# Apply LOWESS smoothing
 smoothed_y <- lowess_smoothing(x, y, f)
+smoothed_y
 ```
 
 ------------------------------------------------------------------------
@@ -113,7 +91,7 @@ smoothed_y <- lowess_smoothing(x, y, f)
 Use the built-in `lowess()` function with the same `f` value. You will also need to set the `iter` argument to 0.
 
 ```{r}
-lowess(x, y, f)
+lowess(x, y, f, iter=0)
 ```
 
 Plot both curves to compare their smoothing values.
