@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./Practical Two and Three.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -170,13 +171,25 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Index</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">GitHub</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Practical One.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Practical One</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Practical Two and Three.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Practical Two/Three</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Practical Four.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Practical Four</span></span></a>
   </div>
 </li>
     </ul>
@@ -187,7 +200,11 @@ window.Quarto = {
   <ul>
   <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1"><span class="header-section-number">2.1</span> Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2"><span class="header-section-number">2.2</span> Question 2</a></li>
-  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3"><span class="header-section-number">2.3</span> Question 3</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3"><span class="header-section-number">2.3</span> Question 3</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">2.3.1</span> 3.1</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="header-section-number">2.3.2</span> 3.2</a></li>
+  </ul></li>
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4"><span class="header-section-number">2.4</span> Question 4</a></li>
   </ul>
 </nav>
@@ -442,7 +459,7 @@ window.Quarto = {
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>max_temp <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">as.numeric</span>(airquality_q2[[<span class="dv">4</span>]]), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>mean_ozone <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(airquality_q2[[<span class="dv">1</span>]]), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>sd_ozone <span class="ot">&lt;-</span> <span class="fu">sd</span>(<span class="fu">as.numeric</span>(airquality_q2[[<span class="dv">1</span>]]),<span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>sd_ozone <span class="ot">&lt;-</span> <span class="fu">sd</span>(<span class="fu">as.numeric</span>(airquality_q2[[<span class="dv">1</span>]]), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>min_ozone <span class="ot">&lt;-</span> <span class="fu">min</span>(<span class="fu">as.numeric</span>(airquality_q2[[<span class="dv">1</span>]]), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>max_ozone <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">as.numeric</span>(airquality_q2[[<span class="dv">1</span>]]), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -450,7 +467,9 @@ window.Quarto = {
 </section>
 <section id="question-3" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="question-3"><span class="header-section-number">2.3</span> Question 3</h2>
-<p>For linear regression, parameter estimates can be found as follows <span class="math inline">\(\beta=(X^TX)^{-1}X^TY\)</span>. Here, Y is the response variable, and X is the design matrix. The cars data (an R data set, also always available in <code>R</code>) contains two variables: speed and distance to stop. Fit a simple linear regression model to these data, i.e.&nbsp;find the β estimates, using the equation above, and matrix calcuations in R.</p>
+<section id="section" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="section"><span class="header-section-number">2.3.1</span> 3.1</h3>
+<p>For linear regression, parameter estimates can be found as follows <span class="math inline">\(\beta=(X^TX)^{-1}X^TY\)</span>. Here, Y is the response variable, and X is the design matrix. The cars data (an R data set, also always available in <code>R</code>) contains two variables: speed and distance to stop. Fit a simple linear regression model to these data, i.e.&nbsp;find the β estimates, using the equation above, and matrix calculations in R.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cars <span class="ot">&lt;-</span> cars  </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>cars[] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(cars,as.numeric) </span>
@@ -464,20 +483,75 @@ window.Quarto = {
 5     8   16
 6     9   10</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>matrix_x <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span>,<span class="fu">matrix</span>(cars<span class="sc">$</span>speed))</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>matrix_y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(cars<span class="sc">$</span>dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span>,<span class="fu">matrix</span>(cars<span class="sc">$</span>speed))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(cars<span class="sc">$</span>dist)   <span class="co"># Response matrix</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(X)             <span class="co"># Number of observations</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ncol</span>(X)             <span class="co"># Number of parameters (intercept + predictors)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Calculate beta estimate</p>
+</section>
+<section id="section-1" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="section-1"><span class="header-section-number">2.3.2</span> 3.2</h3>
+<p>Calculate beta estimate, standard errors, test-statistics and p-values</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>beta_estimate <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(matrix_x)<span class="sc">%*%</span>(matrix_x))<span class="sc">%*%</span><span class="fu">t</span>(matrix_x)<span class="sc">%*%</span>(matrix_y) </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>beta_estimate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>simp_reg <span class="ot">&lt;-</span> <span class="cf">function</span>(matrix_x, matrix_y){</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute beta estimates (OLS solution)</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    beta_hat <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X) <span class="sc">%*%</span> (<span class="fu">t</span>(X) <span class="sc">%*%</span> Y)  <span class="co"># (X'X)^(-1) X'Y</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute residuals</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    y_hat <span class="ot">&lt;-</span> X <span class="sc">%*%</span> beta_hat  <span class="co"># Predicted values</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    residuals <span class="ot">&lt;-</span> Y <span class="sc">-</span> y_hat   <span class="co"># Residuals</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute residual variance (sigma^2)</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    sigma_sq <span class="ot">&lt;-</span> <span class="fu">sum</span>(residuals<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> (n <span class="sc">-</span> p)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute variance-covariance matrix of beta estimates</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    cov_beta <span class="ot">&lt;-</span> sigma_sq <span class="sc">*</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute standard errors (SE) of beta coefficients</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    SE_beta <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(cov_beta))</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    SE_beta</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute the test-statistics</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    test_stats <span class="ot">&lt;-</span> beta_hat <span class="sc">/</span> SE_beta</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    test_stats</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate p-values</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    p_values <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="sc">-</span><span class="fu">abs</span>(test_stats), <span class="at">df =</span> n <span class="sc">-</span> p)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    return_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">Beta_Coefficients =</span> beta_hat,</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">Standard_Error =</span> SE_beta,</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">Test_Statistics =</span> test_stats,</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">P_Values =</span> p_values</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(return_list)</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="fu">simp_reg</span>(X, Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           [,1]
+<pre><code>$Beta_Coefficients
+           [,1]
 [1,] -17.579095
-[2,]   3.932409</code></pre>
+[2,]   3.932409
+
+$Standard_Error
+[1] 6.7584402 0.4155128
+
+$Test_Statistics
+          [,1]
+[1,] -2.601058
+[2,]  9.463990
+
+$P_Values
+             [,1]
+[1,] 1.231882e-02
+[2,] 1.489836e-12</code></pre>
 </div>
 </div>
 <hr>
+</section>
 </section>
 <section id="question-4" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="question-4"><span class="header-section-number">2.4</span> Question 4</h2>
@@ -933,11 +1007,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Index">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Index</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="GitHub">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">GitHub</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./Practical Two and Three.html" class="pagination-link" aria-label="Practical Two/Three">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Practical Two/Three</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -1,0 +1,72 @@
+# Practical 5
+
+```{r}
+pkg_vec <- c("ggplot2", "palmerpenguins", "ggthemes")
+for (x in pkg_vec) {
+  if (!requireNamespace(x, quietly = TRUE)) {
+    install.packages(x, dependencies = TRUE)
+  }
+  # if you want to programmatically attach
+  # libraries, this is the way to to do it
+  library(x, character.only = TRUE)
+}
+library(ggplot2)
+```
+
+## Question 1
+
+Simulate 100 random numbers from a normal distribution with mean 3 and standard deviation 1. Use `ggplot2` to plot the empirical density of these, and format the plot according to best practice (e.g. with axis titles, caption, etc.).
+
+```{r}
+random_numbers <- data.frame(x = 1:100, y= rnorm(100, mean = 3, sd = 1))
+
+ggplot(data = random_numbers, aes(x = x, y=y)) +
+  geom_point(aes(color = "red")) +
+  labs(
+    title = "Question 1",
+    subtitle =  "Generated Random Numbers According To The  \nNormal Distribution Mean = 3 and Standard Deviation = 1", 
+    caption = "Figure 1", 
+    x = "Numbers 1 to 100",
+    y = "Normally Distributed Values"
+  )
+  
+```
+
+Make a reference to the plot in the text (e.g. using `@fig-dens-plot`).
+
+```{r}
+
+```
+
+Overlay the true density of the normal distribution on the plot (hint: use `geom_line`).
+
+```{r}
+random_numbers <- data.frame(x = 1:100, y= rnorm(100, mean = 3, sd = 1))
+
+ggplot(data = random_numbers, aes(x = x, y=y)) +
+  geom_point(aes(color = "red")) +
+  geom_smooth(method ="lm") +
+  labs(
+    title = "Question 1",
+    subtitle =  "Generated Random Numbers According To The  \nNormal Distribution Mean = 3 and Standard Deviation = 1", 
+    caption = "Figure 1", 
+    x = "Numbers 1 to 100",
+    y = "Normally Distributed Values"
+  ) +
+  theme_cowplot(font_size = 15) +
+  background_grid(major = "xy") +
+  theme(
+    plot.background = element_rect(fill = "white"),
+    panel.background = element_rect(fill = "white")
+  )
+```
+
+------------------------------------------------------------------------
+
+## **Question Two**
+
+Calculate a two-way frequency table of species of penguins and island location (from the `palmerpenguins` package’s dataset), and display it according to best practices (e.g. table caption, appropriate lines, etc.).
+
+```{r}
+
+```

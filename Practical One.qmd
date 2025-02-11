@@ -28,7 +28,7 @@ min_temp <- min(as.numeric(airquality_q2[[4]]), na.rm = TRUE)
 max_temp <- max(as.numeric(airquality_q2[[4]]), na.rm = TRUE)
 
 mean_ozone <- mean(as.numeric(airquality_q2[[1]]), na.rm = TRUE)
-sd_ozone <- sd(as.numeric(airquality_q2[[1]]),na.rm = TRUE)
+sd_ozone <- sd(as.numeric(airquality_q2[[1]]), na.rm = TRUE)
 min_ozone <- min(as.numeric(airquality_q2[[1]]), na.rm = TRUE)
 max_ozone <- max(as.numeric(airquality_q2[[1]]), na.rm = TRUE)
 ```
@@ -37,17 +37,21 @@ max_ozone <- max(as.numeric(airquality_q2[[1]]), na.rm = TRUE)
 
 ## Question 3
 
-For linear regression, parameter estimates can be found as follows $\beta=(X^TX)^{-1}X^TY$. Here, Y is the response variable, and X is the design matrix. The cars data (an R data set, also always available in `R`) contains two variables: speed and distance to stop. Fit a simple linear regression model to these data, i.e. find the β estimates, using the equation above, and matrix calcuations in R.
+### 3.1
+
+For linear regression, parameter estimates can be found as follows $\beta=(X^TX)^{-1}X^TY$. Here, Y is the response variable, and X is the design matrix. The cars data (an R data set, also always available in `R`) contains two variables: speed and distance to stop. Fit a simple linear regression model to these data, i.e. find the β estimates, using the equation above, and matrix calculations in R.
 
 ```{r}
 cars <- cars  
 cars[] <- lapply(cars,as.numeric) 
 head(cars)    
 X <- cbind(1,matrix(cars$speed))
-Y <- matrix(cars$dist)   #response matrix
+Y <- matrix(cars$dist)   # Response matrix
 n <- nrow(X)             # Number of observations
 p <- ncol(X)             # Number of parameters (intercept + predictors)
 ```
+
+### 3.2
 
 Calculate beta estimate, standard errors, test-statistics and p-values
 
